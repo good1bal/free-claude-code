@@ -22,6 +22,7 @@
 - When exploring new features, create a feature branch (e.g. `experiment/my-feature`) rather than committing directly to `main`.
 - Keep a `CHANGELOG.md` or branch notes file when experimenting so it's easy to retrace what was tried and why.
 - Prefer small, focused commits with clear messages — easier to cherry-pick if anything is worth upstreaming later.
+- Sync with upstream (`Alishahryar1/free-claude-code`) periodically to pick up bug fixes; check for upstream changes before starting a new experiment branch.
 
 ## IDENTITY & CONTEXT
 
@@ -35,6 +36,4 @@
 - **DRY**: Extract shared base classes to eliminate duplication. Prefer composition over copy-paste.
 - **Encapsulation**: Use accessor methods for internal state (e.g. `set_current_task()`), not direct `_attribute` assignment from outside.
 - **Provider-specific config**: Keep provider-specific fields (e.g. `nim_settings`) in provider constructors, not in the base `ProviderConfig`.
-- **Dead code**: Remove unused code, legacy systems, and hardcoded values. Use settings/config instead of literals (e.g. `settings.provider_type` not `"nvidia_nim"`).
-- **Performance**: Use list accumulation for strings (not `+=` in loops), cache env vars at init, prefer iterative over recursive when stack depth matters.
-- **Platform-agnostic naming**: Use generic names (e.g. `PLATFORM_ED
+- **Dead code**: Remove unused code, legacy systems, and hardcoded values. Use settings/config instead of literals (e.g. `settings.provider_type` not `"nvidia_nim"`
