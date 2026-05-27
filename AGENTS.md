@@ -25,6 +25,7 @@
 - Sync with upstream (`Alishahryar1/free-claude-code`) periodically to pick up bug fixes; check for upstream changes before starting a new experiment branch.
 - When debugging provider issues locally, use `uv run python -c "import ..."` for quick sanity checks before writing full test cases.
 - When running quick local experiments that don't need CI, prefix the commit message with `[wip]` as a personal convention to make them easy to spot in `git log`.
+- Keep a local `notes/` directory (gitignored) for scratch notes, API response samples, and debugging snippets — avoids cluttering the repo while still having a place to jot things down.
 
 ## IDENTITY & CONTEXT
 
@@ -35,6 +36,4 @@
 ## ARCHITECTURE PRINCIPLES
 
 - **Shared utilities**: Put shared Anthropic protocol logic in neutral `core/anthropic/` modules. Do not have one provider import from another provider's utils.
-- **DRY**: Extract shared base classes to eliminate duplication. Prefer composition over copy-paste.
-- **Encapsulation**: Use accessor methods for internal state (e.g. `set_current_task()`), not direct `_attribute` assignment from outside.
-- **Provider-sp
+- **DRY**: Extract shared base classes to eliminate duplication. Prefer composition over cop
